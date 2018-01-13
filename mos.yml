@@ -1,0 +1,29 @@
+author: Ralf Sigmund
+type: lib
+description: Moongose OS BME680 library based on bme280 approach by Liviu Nicolescu
+version: 1.0
+
+sources:
+  - src
+  - src/BME680_driver
+
+includes:
+  - include
+
+config_schema:
+#I2C
+ - ["i2c.enable", true]
+#SPI
+ - ["spi.enable", true]
+
+libs:
+  - origin: https://github.com/mongoose-os-libs/i2c
+  - origin: https://github.com/mongoose-os-libs/spi
+
+build_vars:
+
+tags:
+  - c
+  - c++
+
+manifest_version: 2017-09-29
