@@ -1,4 +1,4 @@
-# Bosch Sensortec's BMP280/BME280 Mongoose OS library
+# Bosch Sensortec's BME680 Mongoose OS library
 
 It uses Bosch Sensortec's reference implementation.
 
