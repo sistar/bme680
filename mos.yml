@@ -3,12 +3,14 @@ type: lib
 description: Moongose OS BME680 library based on bme280 approach by Liviu Nicolescu
 version: 1.0
 
+includes:
+  - include
+
 sources:
   - src
   - src/BME680_driver
 
-includes:
-  - include
+
 
 config_schema:
 #I2C

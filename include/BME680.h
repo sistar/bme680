@@ -30,34 +30,7 @@ public:
         return mgos_bme680_read(_bme, &data);
     }
 
-        /*
-     * Reads the temperature.
-     * Returns MGOS_BME680_ERROR if error.
-     */
-    double readTemperature()
-    {
-        return mgos_bme680_read_temperature(_bme);
-    }
-
-    /*
-     * Reads the pressure.
-     * Returns MGOS_BME680_ERROR if error.
-     */
-    double readPressure()
-    {
-        return mgos_bme680_read_pressure(_bme);
-    }
-
-    /*
-     * Reads the humidity.
-     * If the device is BMP280, the humidity will be 0.
-     * Returns MGOS_BME680_ERROR if error.
-     */
-    double readHumidity()
-    {
-        return mgos_bme680_read_humidity(_bme);
-    }
-
+    
     /*
      * Returns true if a BME680 device is connected
      */
