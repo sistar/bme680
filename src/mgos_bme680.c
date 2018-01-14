@@ -38,6 +38,7 @@ static int8_t user_i2c_read(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data,
         return -1;
     }
     bool ok = mgos_i2c_read_reg_n(i2c, dev_id, reg_addr, len, reg_data);
+    if(!ok) {LOG(LL_INFO, ("Could not read i2c"));}
     return ok ? 0 : -2;
 }
 
@@ -69,6 +70,7 @@ static int8_t user_i2c_write(uint8_t dev_id, uint8_t reg_addr, uint8_t *reg_data
     }
 
     bool ok = mgos_i2c_write_reg_n(i2c, dev_id, reg_addr, len, reg_data);
+    if(!ok) {LOG(LL_INFO, ("Could not write i2c"));}
     return ok ? 0 : -2;
 }
 
@@ -189,7 +191,7 @@ static int8_t commonInit(struct mgos_bme680* bme)
 {
     int8_t rslt = bme680_init(&bme->dev);
     if (BME680_OK != rslt) {
-        LOG(LL_INFO, ("BMP/BME680 device not found - %hhd", rslt));
+        LOG(LL_INFO, ("BME680 device not found - %hhd", rslt));
         return rslt;
     }
 
